@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+
+</head>
+<body onload="visitCount()">
+ 
+<script type="text/javascript">
+
+
+ function visitCount()
+{
+var num = 0;
+var flag = 0;
+var cookieList = document.cookie;
+cookieList = cookieList.split(';');
+var cookieLength = cookieList.length;
+for(var i=0;i<cookieLength;i++)
+{
+var someCookie = cookieList[i].split('=');
+var cookieName = someCookie[0];
+if(cookieName == "visitcount")
+{
+var cookieValue = someCookie[1];
+num = Number(cookieValue) + 1;
+document.cookie = "visitcount="+num;
+flag = 1;
+}
+}
+if(flag == 0)
+{
+num++;
+document.cookie = "visitcount="+num;
+}
+var divVisit=document.getElementById("div-visit");
+divVisit.innerHTML = num+" views";
+}
+</script>
+
+ <p id="div-visit"></p>
+</body>
+</html>

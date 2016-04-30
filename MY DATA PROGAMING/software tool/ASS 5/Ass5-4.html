@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Question 4</title>
+</head>
+<body bgcolor="#FF8C00">
+<h1 align="center">Example of sorting using  javascript</h1>
+<script type="text/javascript">
+var arr=[2,5,4];
+	
+	for(var i=0;i<2;i++)
+	   {
+	   for(var j=i+1;j<3;j++)
+	      if(arr[i]<arr[j])
+		     {
+			     var temp=arr[i];
+				 arr[i]=arr[j];
+				 arr[j]=temp;
+			 }
+	   }
+	  
+          alert(arr);	  
+</script>
+
+
+</body>
+</html>

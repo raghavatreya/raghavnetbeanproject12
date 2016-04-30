@@ -1,0 +1,20 @@
+li,tr,td,th
+{
+	color:red;
+}
+			p
+			{
+			 color:gray;
+			 font-family:bold;
+			 font-size:15px;
+			}
+		  
+		body
+		{
+		 background-color:orange;
+		 background-image:url(43.jpg);
+		 background-repeat:repeat-x;
+		 background-image:url(43.jpg);
+		 background-repeat:center-bottom;
+		 background-attachment:normal;
+		}

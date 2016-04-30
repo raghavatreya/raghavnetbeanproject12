@@ -1,0 +1,184 @@
+<html>
+<head><title>Form</title></head>
+<style>
+table
+{
+
+}
+</style>
+<style>
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+	border-bottom-color:#FF6666;
+	border-color:#99FF99;
+}
+</style>
+<body bgcolor="#FF6666">
+<h1 align="center">Form</h1><br><br>
+<form id="f">
+<table border="1" align="center">
+<tr>
+		<td align="right">Submit</td>
+		<td>Form</td>
+</tr>
+<tr>
+<td>Username*</td>
+<td><input type="text" id="un" title="  REQUIRED MUST BE 7 TO 12  "></td>
+</tr>
+<tr>
+<td>Password*</td>
+<td><input type="password" id="p" title="   REQUIRED MUST BE 5 TO 10  "></td>
+</tr>
+<tr>
+<td>Confirm Password*</td>
+<td><input type="password" id="cp"></td>
+</tr>
+<tr>
+<td>First Name*</td>
+<td><input type="text" id="fn"></td>
+  </tr>
+<tr>
+<td>Last Name</td>
+<td><input type="text" id="ln"></td>
+</tr>
+<tr>
+<td>Age*</td>
+<td><input type="text" id="a" title="   REQUIRED MUST BE GREATER THAN 22  "></td>
+</tr>
+<tr>
+<td>Email*</td>
+<td><input type="text" id="e" title="  EMAIL MUST VAILD  "></td>
+</tr>
+<tr>
+<td>Phone*</td>
+<td><input type="text" id="pn" title="  REQUIRED MUST NUMBERIC  "></td>
+</tr>
+<tr>
+<td>Fax</td>
+<td><input type="text" id="f"></td>
+</tr>
+<tr>
+<td>Date of Birth*</td>
+<td><input type="text" id="dob"></td>
+</tr>
+<tr>
+<td>Website*</td>
+<td><input type="text" id="w"></td>
+</tr>
+<tr>
+<td>Country*</td>
+<td><select id="c">
+	<option>---Select---</option>
+	<option>China</option>
+	<option>India</option>
+	<option>United Kingdome</option>
+	<option>United States</option>
+	</td>
+</tr>
+<tr>
+<td>Gender*</td>
+<td><input type="radio" name="r" id="g" value="Male">Male</input>
+	<input type="radio" name="r" id="g1" value="Female">Female</input></td>
+</tr><br><br>
+<tr>
+<td>Disclaimer*</td>
+<td><input type="checkbox" id="cb"></td>
+</tr>
+<tr>
+<td>
+<input type="button" id="dis" value="Display" onClick="fun1()"></td><td>
+<input type="button" id="sub" value="Submit" onClick="fun()">
+</td>
+</tr>
+</table>
+</form>
+<script>
+function fun()
+{
+	var un=document.getElementById("un").value;
+	var p=document.getElementById("p").value;
+	var cp=document.getElementById("cp").value;
+	var fn=document.getElementById("fn").value;
+	var a=document.getElementById("a").value;
+	var e=document.getElementById("e").value;
+	var pn=document.getElementById("pn").value;
+	var dob=document.getElementById("dob").value;
+	var w=document.getElementById("w").value;
+	var c=document.getElementById("c").value;
+	var cb=document.getElementById("cb");
+	var x =1;
+	if(un=="")
+	{	alert("Username field shouldn't be empty!"); x=0;}
+	else if(un.length<7 || un.length>12)
+	{	alert("Enter Username between 7 to 12 characters."); x=0;}
+	if(p=="")
+	{	alert("Password field shouldn't be empty!"); x=0;}
+	else if(p.length<5 || p.length>10)
+	{	alert("Enter Password between 5 to 10 characters."); x=0;}
+	else
+	{  }
+	if(cp!=p)
+	{	alert("Password and Confirm Password fields do not matched!");x=0;}
+	if(fn=="")
+	{	alert("Firstname field shouldn't be empty!");x=0;}
+	if(a=="")
+	{	alert("Age field shouldn't be empty!");}
+	if(isNaN(a)==true)
+	{	alert("Enter number only in Age field.");}
+	else if(a<22)
+	{	alert("Age should be grater than 22.");x=0;}
+	else
+	{}
+	if(e=="")
+	{	alert("Email field shouldn't be empty!");x=0;}
+	else if (e.indexOf("@")< 1 || e.lastIndexOf(".")<e.indexOf("@")+2 || e.indexOf("@")+2>=e.length) 
+      {  alert("Not a valid e-mail address");x=0;}
+	else
+	{}
+	if(pn=="")
+	{	alert("Phone number field shouldn't be empty!");x=0;}
+	else if(isNaN(pn)==true)
+	{	alert("Enter number only in phone number field.");x=0;}
+	else 
+	{}
+	
+	if(dob=="")
+	{	alert("Date of Birth field shouldn't be empty!");x=0;}
+	if(w=="")
+	{	alert("Website field shouldn't be empty!");x=0;}
+	if(c=="---Select---")
+	{	alert("Select one country.");x=0;}
+	if(cb.checked==false)
+	{	alert("Disclaimer is not checked.");x=0;}
+	
+//	-------checked--- NaN function will check illegality of a variable
+	if(x==1)
+		alert("ACCEPTED!");
+	else
+	alert("DOES NOT ACCEPTED");
+}
+function fun1()
+{
+	var un=document.getElementById("un").value;
+	var fn=document.getElementById("fn").value;
+	var ln=document.getElementById("ln").value;
+	var a=document.getElementById("a").value;
+	var e=document.getElementById("e").value;
+	var pn=document.getElementById("pn").value;
+	var f=document.getElementById("f").value;
+	var dob=document.getElementById("dob").value;
+	var w=document.getElementById("w").value;
+	var c=document.getElementById("c").value;
+		if(document.getElementById("g").checked)
+			var g=document.getElementById("g").value	;
+	if(document.getElementById("g1").checked)
+	var g=document.getElementById("g1").value;
+	alert("Username:"+un+"\nFirst Name:"+fn+"\nLast name:"+ln+"\nAge:"+a+"\nEmain:"+e+"\nPhone:"+pn+"\nFax:"+f+"\nDateofBirth:"+dob+"\nWebsite:"+w+"\nCountry:"+c+"\nGender:"+g);
+}
+</script>
+</body>
+</html>

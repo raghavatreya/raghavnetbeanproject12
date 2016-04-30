@@ -1,0 +1,26 @@
+<html>
+<head><title>Assignment 6 Ques 1-A</title></head>
+<body>
+<center>
+<h1>Upper Case</h1><br><br><br><br>
+<input type="text" id="str">
+<input type="button" value="Alert!" onClick="fun()">
+<script>
+function fun()
+{
+/* "LOGIC" ==we first creating to string from str then sperate them to two new string "s" and "t" then s==toUpperCase() and t==toLowerCase() then concate them */
+	var str=document.getElementById("str").value; 
+	ucFirst(str);
+	function ucFirst(str)
+	{
+		var s=str.charAt(0);
+		var t=str.slice(1,str.length);
+		s=s.toUpperCase();
+		t=t.toLowerCase();
+		str=s.concat(t);
+		alert(str);
+	}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<html>
+<head><title>Assignment 6 Ques 1-B Truncate</title></head>
+<body>
+<center>
+<h1>Truncate String</h1><br /><br /><br /><br />
+Enter The String <input type="text" id="str"><br />
+Enter The Limit <input type="text" id="ml">
+<input type="button" value="Alert!" onClick="fun()">
+<script>
+function fun()
+{
+/*
+  two value would be taken then separted them into two string and then convert into A new string 
+*/
+	var str=document.getElementById("str").value; 
+	var maxlength=document.getElementById("ml").value; 
+	truncate(str,maxlength);
+	function truncate(str,maxlength)
+	{
+		var t=str.slice(0,maxlength);
+		if(maxlength<str.length)
+			str=t.concat("...");
+		alert(str);
+	}
+}
+</script>
+</body>
+</html>

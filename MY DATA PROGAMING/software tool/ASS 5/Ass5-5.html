@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Question  5</title>
+</head>
+<body bgcolor="#ADFF2F">
+
+   <h1 align="center"> Prime Numbers Between 2 To 15</h1>
+<center>
+   <p id="Q5"></p>
+</center>
+   <script type="text/javascript">
+   var txt="";
+   for(i=2;i<=15;i++)
+   {  g=1;
+      for(j=i-1;j!=1;j--)
+	  {
+	    if(i%j==0)
+		{
+		  g=0;
+		}
+	
+	  }
+	  	if(g==1)
+		{
+		   txt=txt+" "+i+ " prime "+"<br />";
+		}
+		else
+		{
+			txt=txt+" "+i+ "not prime "+"<br />";
+		}
+   
+   }
+        document.getElementById("Q5").innerHTML = txt ;
+
+   
+   </script>
+   
+</body>
+</html>

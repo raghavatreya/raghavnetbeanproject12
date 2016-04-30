@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1420201588 source:g:\raghav atreya\my data progaming\cppprogram\doubleylinklist\cretaing.cpp
+
+1420203170 source:g:\raghav atreya\my data progaming\cppprogram\doubleylinklist\main.cpp
+	<iostream>
+	<string.h>
+	<stdlib.h>
+

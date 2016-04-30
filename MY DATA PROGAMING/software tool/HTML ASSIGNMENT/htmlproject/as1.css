@@ -1,0 +1,17 @@
+li,tr,td,th
+{
+	color:red;
+}
+			p
+			{
+			 color:gray;
+			 font-family:bold;
+			 font-size:15px;
+			}
+		  
+		body
+		{
+		 background-color:#6699FF;
+		 background-repeat:center-bottom;
+		 background-attachment:normal;
+		}

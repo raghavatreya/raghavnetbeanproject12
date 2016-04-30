@@ -1,0 +1,50 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript">
+function cookie(cookie_name)
+{
+	//console.log("cookie called");
+	var name=cookie_name+"=";
+	var tp=document.cookie.split(';');
+	var i=0,c;
+	console.log("cookie step 1");
+	for(i=0;i<tp.length;i++)
+	{
+		c=tp[i];
+		while(c.charAt[0]=='')	c=c.substring(i);
+		console.log("cookie loop - "+c);
+		if(c.indexOf(name)!=-1)	return c.substring(name.length,c.length);
+	}
+	//console.log("cookie step 2");
+	return "";
+}
+function inc()
+{
+	//console.log("inc called");
+	var y,x=cookie("hits"),t=new Date();
+	//console.log("x="+x);
+	if(x=="")
+	{
+		document.cookie="hits=0";
+		document.getElementById("cookie-status").innerHTML="VIEWS : "+0+"<br/>This is your first visit !!";
+		document.cookie="hits=1";
+		document.cookie="lastv="+t;
+	}
+	else
+	{
+		y=parseInt(x)+1;
+		document.cookie="hits="+y;
+		t=cookie("lastv");
+		document.getElementById("cookie-status").innerHTML="VIEWS : "+y+"<br/>Your last visit was on : "+t;
+	}
+}
+</script>
+</head>
+<body onload="inc()">
+<table align="center" width="40%" cellpadding="10">
+	<tr><td>Cookie Status : </td><td id="cookie-status"></td></tr>
+</table>
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+table,th,td
+{
+  border:1px soild voilate; 
+  border-collapse:collapse;
+}
+th,td
+{
+	padding:9px
+}

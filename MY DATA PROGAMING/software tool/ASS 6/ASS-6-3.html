@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body onload="abc()">
+<!--- two types system cookies info sre store in  on our machine accosiate (hard drive) file
+path ="/" every dirictry can exccess the cookies
+
+all data will store in document.cookies
+ delete when browser will close
+ lesser than 4 kb
+A cookie has 6 fields: The name of
+the cookie, its content, the domain (or web site) for which that cookie is valid, the path on that
+web site that can request the cookie, whether the cookie is allowed to be sent over unsecured
+connections, and the expiry date.
+--->
+
+<script>
+function check()
+
+{
+
+	var x=document.cookie;
+
+	var y=x.search("visits=");
+
+	
+
+	var no=x.substring(y+7,y+9);
+
+	var n=parseInt(no);
+
+	return n;
+
+}
+
+function abc(){
+
+	if(document.cookie.search("visits=")!=-1)
+
+	var v=check();
+
+	else
+
+		v=0;
+
+if(v==0)
+
+{
+
+	alert("you have never visited");
+
+	var a=1;
+
+	var d=new Date();
+
+	document.cookie="visits="+a+";";
+
+	document.cookie="last="+d.toString()+";";
+
+}
+
+else
+
+{
+
+	var x=check()+1;
+
+	var c=document.cookie;
+
+	var i;
+
+	var time;
+
+	var coo=c.split(";");
+
+	for(i=0;i<coo.length;i++)
+
+	{
+
+		if(coo[i].search("last=")!=-1)
+
+		{
+
+			var index;
+
+			index=coo[i].search("last=");
+
+			time=coo[i].substring(index+5,coo[i].length-2);
+
+			break;
+
+		}
+
+	}
+
+	
+
+	
+
+	alert("you have visited "+x+" time");
+
+	alert("You last visited at "+time);
+
+	var a=x;
+
+	var d=new Date();
+
+	
+
+	document.cookie="visits="+a+";";
+
+	document.cookie="last="+d.toString()+";";
+
+}
+
+}
+</script>
+</body>
+</html>
